@@ -1,0 +1,48 @@
+{% load static %}
+<section id="features" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Produtos</h2>
+          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            {% for produto in produtos1 %}
+            <div class="content-left">
+              <div class="box-item wow fadeInLeft" data-wow-delay="0.3s">
+                <span class="icon">
+                  <i class="{{ produto.icone }}"></i>
+                </span>
+                <div class="text">
+                  <h4>{{ produto.nome }}</h4>
+                  <p>{{ produto.descricao }}</p>
+                </div>
+              </div> 
+            </div>
+            {% endfor %}
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="show-box wow fadeInUp" data-wow-delay="0.3s">
+              <img src="{% static 'img/feature/intro-mobile.png' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            {% for produto2 in produtos2 %}
+            <div class="content-right">
+              <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
+                <span class="icon">
+                  <a href="{% url 'detalhes' %}"><i class="{{ produto2.icone }}"></i></a>
+                </span>
+                <div class="text">
+                  <h4>{{ produto2.nome }}</h4>
+                  <p>{{ produto2.descricao }}</p>
+                </div>
+              </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
